@@ -1,0 +1,19 @@
+{
+  "name": "eccomerce-store-try-1-tailwind-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "postcss src/styles.css -o public/style.css",
+    "watch-css": "postcss src/styles.css -o public/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/custom-forms": "github:tailwindcss/custom-forms",
+    "autoprefixer": "^9.8.6",
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.6.0"
+  }
+}

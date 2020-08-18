@@ -1,0 +1,723 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+
+  <body class="bg-gray-200 antialiased xl:flex xl:flex-col xl:h-screen">
+    <h1 class="absolute inset"></h1>
+    <header class="bg-gray-900 sm:flex sm:items-center sm:justify-between xl:flex-1 xl:flex">
+      <div class="px-4 py-3 flex justify-between items-center">
+        <h1 class="text-white text-2xl ml-3 sm:self-start">Workcation</h1>
+
+        <button
+          type="button"
+          id="drop-button"
+          class="px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white sm:hidden"
+        >
+          <svg
+            id="x-icon"
+            class="h-6 w-6 fill-current hidden"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+          <svg
+            id="menu-icon"
+            class="h-6 w-6 fill-current"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      <nav id="navbar" class="invisible h-0 w-0 sm:visible sm:w-auto sm:h-auto">
+        <div class="px-2 pt-2 pb-5 border-b border-gray-800 sm:flex sm:border-transparent sm:p-0 sm:px-6">
+          <a
+            href="#"
+            class="block px-3 py-2 rounded font-semibold tracking-wide text-white transition duration-100 ease-linear hover:bg-gray-800 sm:text-sm sm:pt-4 sm:hover:text-gray-400 sm:hover:bg-transparent"
+            >List your property</a
+          >
+          <a
+            href="#"
+            class="mt-3 block px-3 py-2 rounded font-semibold tracking-wide text-white transition duration-100 ease-linear hover:bg-gray-800 sm:text-sm sm:mt-0 sm:pt-4 sm:hover:text-gray-400 sm:hover:bg-transparent "
+            >Trips</a
+          >
+          <a
+            href="#"
+            class="mt-3 block px-3 py-2 rounded font-semibold tracking-wide text-white transition duration-100 ease-linear hover:bg-gray-800 sm:text-sm sm:mt-0 sm:pt-4 sm:hover:text-gray-400 sm:hover:bg-transparent "
+            >Property</a
+          >
+          <button class="mt-1 hidden sm:flex sm:items-center sm:ml-4" type="button">
+            <img
+              class="h-10 w-10 object-cover rounded-full border-2 border-gray-600"
+              src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=60"
+              alt=""
+            />
+
+          </button>
+        </div>
+        <div class="px-5 py-5 sm:hidden">
+          <div class="mt-1 flex items-center sm:hidden">
+            <img
+              class="h-10 w-10 object-cover rounded-full border-2 border-gray-600"
+              src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=60"
+              alt=""
+            />
+            <span class="ml-4 font-semibold text-gray-200">Isla Schonger</span>
+          </div>
+          <div class="mt-5">
+            <a href="" class="block text-gray-400 hover:text-white"
+              >Account settings</a
+            >
+            <a href="" class="mt-3 block text-gray-400 hover:text-white"
+              >Support</a
+            >
+            <a href="" class="mt-3 mb-3 block text-gray-400 hover:text-white"
+              >Sign out</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="xl:flex  ">
+      <section class="bg-gray-800 xl:w-auto xl:max-w-xs xl:h-full xl:flex-1 xl:overflow-y-hidden ">
+      <div class="bg-gray-800 py-3 px-2 flex justify-between items-center xl:hidden">
+        <div class="relative mr-4 max-w-xs w-full  sm:ml-2 ">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <svg
+              class="h-6 w-6 fill-current text-gray-500"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              fill-opacity="0"
+              stroke="currentColor"
+            >
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input
+            class="bg-gray-900 text-white rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:bg-white focus:text-gray-900 w-full block"
+            placeholder="Search by Keywords"
+          />
+        </div>
+        <button
+          id="filter"
+          type="button"
+          class="flex rounded-lg pl-3 pr-4 py-2 focus:outline-none focus:shadow-outline bg-gray-700 hover:bg-gray-600 sm:mr-2"
+        >
+          <svg
+            stroke-linecap="round"
+            class="h-6 w-6 fill-current text-gray-500"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M4 6h16M4 12h16M4 18h7"></path>
+          </svg>
+          <span class="ml-1 text-white font-medium">Filters</span>
+        </button>
+      </div>
+
+      <!-- ADD LATER  -->
+      <!-- invisible h-0 w-0 overflow-hidden  -->
+      <form id="form" class="xl:visible xl:h-full xl:w-full xl:flex xl:flex-col xl:justify-between">
+        <div class="lg:flex xl:block xl:overflow-y-auto">
+
+          <div
+            class="pl-4 pb-4 pt-3 border-t border-gray-900  sm:w-full lg:w-1/3 lg:items-baseline lg:border-r-2 lg:border-gray-900 px-4 xl:border-t-0 xl:w-full"
+          >
+            <div class="flex flex-wrap -mx-2  sm:mx-auto sm:w-2/3 lg:w-full">
+              <label class="block w-1/2 px-2  sm:w-1/2 lg:w-1/2"
+                ><span class="text-sm font-semibold text-gray-500">Bedrooms</span>
+                <select class="mt-1 form-select block w-full shadow text-white">
+                  <option>4</option>
+                </select>
+              </label>
+              <label class="block w-1/2 px-2 lg:w-1/2"
+                ><span class="text-sm font-semibold text-gray-500"
+                  ><Bathrooms></Bathrooms></span
+                >
+                <select class="mt-1 form-select block w-full shadow text-white">
+                  <option>2</option>
+                </select>
+              </label>
+
+              <label class="mt-6 w-full sm:w-full sm:mt-0 sm:px-2  lg:w-full lg:mt-4"
+              ><span class="text-sm font-semibold text-gray-500"
+              >Price Range</span
+              >
+              <select class="mt-1 form-select block w-full shadow text-white">
+                <option class="">Up to $2,000 /wk</option>
+                <option class="">Up to $4,000 /wk</option>
+              </select>
+            </label>
+            </div>
+          </div>
+
+          <div class="px-4 pb-4 pt-3 border-t border-gray-900  lg:w-1/3 lg:border-r-2 xl:border-r-0 xl:w-full">
+            <span class="pb-2 block text-sm font-semibold text-gray-500 lg:pb-0"
+              >Property Type</span
+            >
+            <div class="sm:flex sm:-mx-2 lg:block lg:mx-0">
+              <label class="mt-3 flex sm:w-1/4 items-center sm:px-2  lg:w-full lg:px-0 ">
+                <input
+                  class="form-radio"
+                  type="radio"
+                  name="propertyType"
+                  value="house"
+                /><span class="ml-2 text-white">House</span></label
+              >
+              <label class="mt-3 flex sm:w-1/4 items-center sm:px-2  lg:w-full lg:px-0 ">
+                <input
+                  class="form-radio"
+                  type="radio"
+                  name="propertyType"
+                  value="apartment"
+                /><span class="ml-2 text-white">Apartment</span></label
+              >
+              <label class="mt-3 flex sm:w-1/4 items-cente sm:px-2  lg:w-full lg:px-0 ">
+                <input
+                  class="form-radio"
+                  type="radio"
+                  name="propertyType"
+                  value="loft"
+                /><span class="ml-2 text-white">Loft</span></label
+              >
+              <label class="mt-3 flex sm:w-1/4 items-center sm:px-2  lg:w-full lg:px-0 ">
+                <input
+                  class="form-radio"
+                  type="radio"
+                  name="propertyType"
+                  value="townhouse"
+                /><span class="ml-2 text-white">Townhouse</span></label
+              >
+            </div>
+          </div>
+
+          <div class="px-4 pb-4 pt-3 border-t border-gray-900 lg:w-1/2  xl:w-full">
+            <span class="pb-2 block text-sm font-semibold text-gray-500 lg:pb-0"
+              >Amentities</span
+            >
+            <div class="sm:flex sm:flex-wrap sm:-mx-2 sm:mb-8 lg:space-y-4 xl:block">
+
+              <label class="mt-3 flex items-center sm:px-2 sm:w-1/4 lg:w-1/2 ">
+                <input class="form-checkbox" type="checkbox" name="balcony" /><span
+                  class="ml-2 text-white"
+                  >Balcony</span
+                ></label
+              >
+
+              <label class="mt-3 flex items-center sm:px-2 sm:w-1/4 lg:w-1/2 ">
+                <input class="form-checkbox" type="checkbox" name="pool" /><span
+                  class="ml-2 text-white"
+                  >Pool</span
+                ></label
+              >
+              <label class="mt-3 flex items-center sm:px-2 sm:w-1/4 lg:w-1/2 ">
+                <input class="form-checkbox" type="checkbox" name="beach" /><span
+                  class="ml-2 text-white"
+                  >Beach</span
+                ></label
+              >
+              <label class="mt-3 flex items-center sm:px-2 sm:w-1/4 lg:w-1/2 ">
+                <input
+                  class="form-checkbox"
+                  type="checkbox"
+                  name="petFriendly"
+                /><span class="ml-2 text-white">Pet Friendly</span></label
+              >
+              <label class="mt-3 flex items-center sm:px-2 sm:w-1/4 lg:w-1/2 ">
+                <input
+                  class="form-checkbox"
+                  type="checkbox"
+                  name="kidFriendly"
+                /><span class="ml-2 text-white">Kid Friendly</span></label
+              >
+              <label class="mt-3 flex items-center sm:px-2 sm:w-1/4 lg:w-1/2 ">
+                <input class="form-checkbox" type="checkbox" name="parking" /><span
+                  class="ml-2 text-white"
+                  >Parking</span
+                ></label
+              >
+              <label class="mt-3 flex items-center sm:px-2 sm:w-1/3 lg:w-full">
+                <input
+                  class="form-checkbox"
+                  type="checkbox"
+                  name="airConditioning"
+                /><span class="ml-2 text-white">Air Conditioning</span></label
+              >
+
+            </div>
+          </div>
+        </div>
+
+            <div class=" px-4 py-4 bg-gray-900 text-right">
+              <button
+              class="block w-full px-4 py-2 rounded-lg text-white bg-indigo-500 font-semibold hover:bg-indigo-400 sm:w-auto sm:inline-block xl:block xl:w-full"
+              >
+              Update Results
+            </button>
+      </form>
+    </section>
+
+    <main class="px-4 py-6 xl:flex-1">
+      <h3 class="text-gray-900 text-xl">Los Angeles</h3>
+      <p class="text-gray-600">
+        Live like the stars in these luxurious Southern California estates.
+      </p>
+      <div class="mt-6 sm:max-w-xs">
+        <!-- First item -->
+        <div>
+          <div class="relative pb-5/6 rounded-lg overflow-hidden">
+            <img
+              class="absolute inset-0 h-full object-cover shadow-md  "
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+              alt=""
+            />
+          </div>
+          <div class="relative px-4 -mt-16 z-10">
+            <div class="bg-white rounded-lg px-4 py-4 shadow-lg">
+              <div class="flex pb-2">
+                <span
+                  class="inline-block px-2 py-1 bg-teal-200 text-teal-800 font-semibold uppercase tracking-wide text-xs rounded-full"
+                  >Plus</span
+                >
+                <div
+                  class="ml-2 mt-1 text-gray-600 text-xs font-semibold uppercase tracking-wide"
+                >
+                  3 beds &bull; 2 baths
+                </div>
+              </div>
+
+              <h4 class="-mt-1 text-gray-900 font-semibold text-xl">
+                Modern Home in city center
+              </h4>
+              <div class="mt-1">
+                <span class="text-gray-900">$1,400</span>
+                <span class="ml-1 text-gray-600">/wk</span>
+              </div>
+              <div class="mt-2 text-sm text-gray-600 flex items-center">
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <span class="ml-2">34 reviews</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Second item -->
+        <div>
+          <div class="relative pb-5/6 rounded-lg overflow-hidden">
+            <img
+              class="absolute inset-0 h-full object-cover shadow-md  "
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+              alt=""
+            />
+          </div>
+          <div class="relative px-4 -mt-16 z-10">
+            <div class="bg-white rounded-lg px-4 py-4 shadow-lg">
+              <div class="flex pb-2">
+                <span
+                  class="inline-block px-2 py-1 bg-teal-200 text-teal-800 font-semibold uppercase tracking-wide text-xs rounded-full"
+                  >Plus</span
+                >
+                <div
+                  class="ml-2 mt-1 text-gray-600 text-xs font-semibold uppercase tracking-wide"
+                >
+                  3 beds &bull; 2 baths
+                </div>
+              </div>
+
+              <h4 class="-mt-1 text-gray-900 font-semibold text-xl">
+                Modern Home in city center
+              </h4>
+              <div class="mt-1">
+                <span class="text-gray-900">$1,400</span>
+                <span class="ml-1 text-gray-600">/wk</span>
+              </div>
+              <div class="mt-2 text-sm text-gray-600 flex items-center">
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <span class="ml-2">34 reviews</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Third Item -->
+        <div>
+          <div class="relative pb-5/6 rounded-lg overflow-hidden">
+            <img
+              class="absolute inset-0 h-full object-cover shadow-md  "
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+              alt=""
+            />
+          </div>
+          <div class="relative px-4 -mt-16 z-10">
+            <div class="bg-white rounded-lg px-4 py-4 shadow-lg">
+              <div class="flex pb-2">
+                <span
+                  class="inline-block px-2 py-1 bg-teal-200 text-teal-800 font-semibold uppercase tracking-wide text-xs rounded-full"
+                  >Plus</span
+                >
+                <div
+                  class="ml-2 mt-1 text-gray-600 text-xs font-semibold uppercase tracking-wide"
+                >
+                  3 beds &bull; 2 baths
+                </div>
+              </div>
+
+              <h4 class="-mt-1 text-gray-900 font-semibold text-xl">
+                Modern Home in city center
+              </h4>
+              <div class="mt-1">
+                <span class="text-gray-900">$1,400</span>
+                <span class="ml-1 text-gray-600">/wk</span>
+              </div>
+              <div class="mt-2 text-sm text-gray-600 flex items-center">
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <span class="ml-2">34 reviews</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fourth Item -->
+        <div>
+          <div class="relative pb-5/6 rounded-lg overflow-hidden">
+            <img
+              class="absolute inset-0 h-full object-cover shadow-md  "
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+              alt=""
+            />
+          </div>
+          <div class="relative px-4 -mt-16 z-10">
+            <div class="bg-white rounded-lg px-4 py-4 shadow-lg">
+              <div class="flex pb-2">
+                <span
+                  class="inline-block px-2 py-1 bg-teal-200 text-teal-800 font-semibold uppercase tracking-wide text-xs rounded-full"
+                  >Plus</span
+                >
+                <div
+                  class="ml-2 mt-1 text-gray-600 text-xs font-semibold uppercase tracking-wide"
+                >
+                  3 beds &bull; 2 baths
+                </div>
+              </div>
+
+              <h4 class="-mt-1 text-gray-900 font-semibold text-xl">
+                Modern Home in city center
+              </h4>
+              <div class="mt-1">
+                <span class="text-gray-900">$1,400</span>
+                <span class="ml-1 text-gray-600">/wk</span>
+              </div>
+              <div class="mt-2 text-sm text-gray-600 flex items-center">
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <svg
+                  class="h4 w-4 fill-current text-teal-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  ></path>
+                </svg>
+                <span class="ml-2">34 reviews</span>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- End of items -->
+      </div>
+    </main>
+
+    <script>
+      let drop = document.querySelector("#drop-button");
+      let navbar = document.querySelector("#navbar");
+      let menuIcon = document.querySelector("#menu-icon");
+      let xIcon = document.querySelector("#x-icon");
+      let filter = document.querySelector("#filter");
+      let form = document.querySelector("#form");
+      drop.addEventListener("click", (e) => {
+        if (navbar.classList.contains("invisible")) {
+          navbar.classList.add("visible", "h-auto");
+          navbar.classList.remove("invisible", "h-0", "w-0", "overflow-hidden");
+          xIcon.classList.add("visible");
+          xIcon.classList.remove("hidden");
+          menuIcon.classList.add("hidden");
+          menuIcon.classList.remove("visible");
+        } else {
+          navbar.classList.add("invisible", "h-0", "w-0", "overflow-hidden");
+          navbar.classList.remove("visible", "h-auto");
+          xIcon.classList.add("hidden");
+          xIcon.classList.remove("visible");
+          menuIcon.classList.add("visible");
+          menuIcon.classList.remove("hidden");
+        }
+      });
+
+      filter.addEventListener("click", (e) => {
+        if (form.classList.contains("invisible")) {
+          form.classList.add("visible", "h-auto");
+          form.classList.remove("invisible", "h-0", "w-0", "overflow-hidden");
+          filter.classList.add("bg-gray-600", "hover:bg-gray-800");
+          filter.classList.remove("shadow", "hover:bg-gray-600", "bg-gray-700");
+        } else {
+          form.classList.add("invisible", "h-0", "w-0", "overflow-hidden");
+          form.classList.remove("visible", "h-auto");
+          filter.classList.add("shadow", "hover:bg-gray-600", "bg-gray-700");
+          filter.classList.remove("bg-gray-600", "hover:bg-gray-800");
+        }
+      });
+      console.log(drop);
+    </script>
+  </body>
+</html>
