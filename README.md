@@ -1,6 +1,8 @@
 # dashboard-with-tailwind-css
 
-You can view full version at: https://modest-fermat-cd8ba1.netlify.app/public/dashboard.html  
+You can view full version at: https://modest-fermat-cd8ba1.netlify.app/public/dashboard.html
+
+
 **Cool Features:**  
 1)Sidebar  
 2)tables with horizonal scrollbar  
